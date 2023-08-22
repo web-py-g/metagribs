@@ -9,7 +9,7 @@ services_link.onclick = () => {
 
   if (contacts_cards.classList.contains("open"))
     contacts_cards.classList.toggle("open");
-  
+
   popup.style.display = "none";
 };
 
@@ -24,7 +24,7 @@ contacts_link.onclick = () => {
 
   if (services_submenu.classList.contains("open"))
     services_submenu.classList.toggle("open");
-  
+
   popup.style.display = "none";
 };
 
@@ -43,7 +43,6 @@ open_popup.onclick = () => {
 
   if (services_submenu.classList.contains("open"))
     services_submenu.classList.toggle("open");
-  
 };
 
 close_popup.onclick = () => {
@@ -63,4 +62,11 @@ cases_link.onclick = () => {
 
   if (services_submenu.classList.contains("open"))
     services_submenu.classList.toggle("open");
+};
+
+let page_loader = document.querySelector(".page_loader");
+page_loader.classList.add("open");
+
+window.onload = () => {
+  page_loader.classList.remove("open");
 };
