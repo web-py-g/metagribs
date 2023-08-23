@@ -65,8 +65,8 @@ cases_link.onclick = () => {
 };
 
 let page_loader = document.querySelector(".page_loader");
-page_loader.classList.add("open");
+// page_loader.classList.add("open");
 
 window.onload = () => {
-  page_loader.classList.remove("open");
+  // page_loader.classList.remove("open");
 };

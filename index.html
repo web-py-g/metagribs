@@ -179,8 +179,28 @@
           <a href=""><img src="./assets/img/email.png" alt="email" /></a>
         </div>
         <div class="contact_link">
-          <a href="">прийти к нам в гости</a>
+          <a id="contact_link">прийти к нам в гости</a>
         </div>
+      </div>
+      <div class="contacts_form_popup open">
+        <div class="popup_title">Обратная связь</div>
+        <form onsubmit="return false" class="contacts_form">
+          <label class="contacts_form__label contacts_name">
+            <input type="text" name="name" placeholder="Петр" />
+          </label>
+          <label class="contacts_form__label contacts_email">
+            <input type="email" name="email" placeholder="example@mail.ru" />
+          </label>
+          <label class="contacts_form__label contacts_phone">
+            <input
+              type="text"
+              name="phone"
+              maxlength="11"
+              placeholder="89123456789"
+            />
+          </label>
+          <button class="contacts_form__btn">Отправить</button>
+        </form>
       </div>
     </footer>
   </body>

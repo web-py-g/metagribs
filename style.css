@@ -152,9 +152,6 @@ body {
 .header_logo {
   height: 75px;
 }
-.header_right {
-  /* padding-top: 22px; */
-}
 .header_menu {
   position: relative;
   display: flex;
@@ -217,19 +214,21 @@ body {
 
 *::-webkit-scrollbar-thumb {
   background-color: rgb(17 32 82); /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
+  border-radius: 15px; /* roundness of the scroll thumb */
   border: 3px solid transparent; /* creates padding around scroll thumb */
 }
 .cases {
   top: 110%;
   left: 0px;
-  padding: 15px;
   margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+  padding: 15px;
+  border-radius: 15px;
   width: 250px;
   height: 250px;
   overflow-y: auto;
+  z-index: 3;
 }
 .cases_link {
   display: flex;
@@ -338,6 +337,8 @@ body {
 .card_desc {
   font-size: 14px;
 }
+
+
 .popup {
   display: none;
   position: fixed;
@@ -379,6 +380,8 @@ body {
 .popup_desc p {
   margin-bottom: 10px;
 }
+
+
 .page_loader.open{
   display: flex;
 }
@@ -471,4 +474,55 @@ body {
 }
 .page_loader_4::after {
   content: "Продвижение";
+}
+
+.contacts_form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 15px;
+}
+.contacts_form__label{
+  position: relative;
+}
+.contacts_form__label::before{
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 10px;
+  display: inline-block;
+  padding: 0 5px;
+  transform: translateY(60%);
+}
+.contacts_name::before{
+  content: "Имя";
+}
+.contacts_email::before{
+  content: "Email";
+}
+.contacts_phone::before{
+  content: "Телефон";
+}
+.contacts_form__label input{
+  padding: 10px 15px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+.contacts_form__label input::placeholder{
+  color:rgba(255, 255, 255, 0.5)
+}
+
+.contacts_form_popup{
+  flex-direction: column;
+  text-align: center;
+  position: fixed;
+  margin: 0 auto;
+  right: 5%;
+  bottom: 90px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+  padding: 15px;
+  z-index: 2;
+  border-radius: 15px;
 }
