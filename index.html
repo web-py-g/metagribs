@@ -118,6 +118,7 @@
           <a href="#" class="main_link vision">видение</a>
         </div>
         <div class="cards">
+          <a class="popup_close"><img src="./assets/img/close.svg" alt="" /></a>
           <div class="card">
             <div class="card_image">
               <img src="./assets/img/bg3.jpg" alt="" />
@@ -176,14 +177,19 @@
         <div class="contact_list">
           <a href=""><img src="./assets/img/telegram.svg" alt="telegram" /></a>
           <a href=""><img src="./assets/img/facebook.svg" alt="facebook" /></a>
-          <a href=""><img src="./assets/img/email.png" alt="email" /></a>
+          <a class="contact_list_email"
+            ><img src="./assets/img/email.png" alt="email"
+          /></a>
         </div>
         <div class="contact_link">
           <a id="contact_link">прийти к нам в гости</a>
         </div>
       </div>
-      <div class="contacts_form_popup open">
-        <div class="popup_title">Обратная связь</div>
+      <div class="contacts_form_popup">
+        <div class="popup_title">
+          <h2>Обратная связь</h2>
+          <h6 class="copy_email">example@mal.ru</h6>
+        </div>
         <form onsubmit="return false" class="contacts_form">
           <label class="contacts_form__label contacts_name">
             <input type="text" name="name" placeholder="Петр" />
@@ -191,15 +197,15 @@
           <label class="contacts_form__label contacts_email">
             <input type="email" name="email" placeholder="example@mail.ru" />
           </label>
-          <label class="contacts_form__label contacts_phone">
+          <label class="contacts_form__label contacts_comment">
             <input
               type="text"
-              name="phone"
-              maxlength="11"
-              placeholder="89123456789"
+              name="comment"
+              maxlength="150"
+              placeholder="Хочу получить консультацию"
             />
           </label>
-          <button class="contacts_form__btn">Отправить</button>
+          <button class="contacts_form__btn link_border">Отправить</button>
         </form>
       </div>
     </footer>

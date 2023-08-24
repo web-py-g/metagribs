@@ -111,9 +111,11 @@ legend {
 
 body {
   height: 100vh;
-  background: url(./assets/img/background1.jpg) no-repeat;
+  background: url(./assets/img/background1.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
   backdrop-filter: blur(15px);
+  overflow-x: hidden;
 }
 @font-face {
   font-family: "Geometria";
@@ -316,7 +318,7 @@ body {
   top: 20%;
   left: 30%;
   display: none;
-  column-gap: 10px;
+  column-gap: 15px;
   z-index: 3;
 }
 .card {
@@ -338,7 +340,6 @@ body {
   font-size: 14px;
 }
 
-
 .popup {
   display: none;
   position: fixed;
@@ -353,9 +354,13 @@ body {
   padding: 30px;
   z-index: 2;
   border-radius: 15px;
+  overflow: auto;
 }
 .popup_content {
   text-align: center;
+}
+.cards .popup_close {
+  z-index: 4;
 }
 .popup_close {
   position: absolute;
@@ -381,8 +386,7 @@ body {
   margin-bottom: 10px;
 }
 
-
-.page_loader.open{
+.page_loader.open {
   display: flex;
 }
 .page_loader {
@@ -476,53 +480,150 @@ body {
   content: "Продвижение";
 }
 
-.contacts_form{
+.contacts_form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  row-gap: 15px;
+  row-gap: 30px;
 }
-.contacts_form__label{
+.contacts_form__label {
   position: relative;
 }
-.contacts_form__label::before{
+.contacts_form__label::before {
   content: "";
   position: absolute;
   top: -50%;
-  left: 10px;
+  left: 5px;
   display: inline-block;
   padding: 0 5px;
-  transform: translateY(60%);
 }
-.contacts_name::before{
+.contacts_name::before {
   content: "Имя";
 }
-.contacts_email::before{
+.contacts_email::before {
   content: "Email";
 }
-.contacts_phone::before{
-  content: "Телефон";
+.contacts_comment::before {
+  content: "Комментарий";
 }
-.contacts_form__label input{
+.contacts_form__label input {
   padding: 10px 15px;
   border: 1px solid #fff;
   border-radius: 8px;
 }
-.contacts_form__label input::placeholder{
-  color:rgba(255, 255, 255, 0.5)
+.contacts_form__label input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.contacts_form_popup.open {
+  display: flex;
+  animation: show 1s linear;
+  animation-fill-mode: forwards;
+}
+.contacts_form_popup.close {
+  display: flex;
+  animation: hide 1s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes show {
+  0% {
+    right: -5%;
+    opacity: 0;
+  }
+  100% {
+    right: 5%;
+    opacity: 1;
+  }
+}
+@keyframes hide {
+  0% {
+    right: 5%;
+    opacity: 1;
+  }
+  100% {
+    right: -5%;
+    opacity: 0;
+  }
 }
 
-.contacts_form_popup{
+.contacts_form_popup {
+  display: none;
   flex-direction: column;
   text-align: center;
   position: fixed;
   margin: 0 auto;
   right: 5%;
   bottom: 90px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(15px);
   padding: 15px;
   z-index: 2;
   border-radius: 15px;
+}
+
+.copy_email {
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+.contact_list_email {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .header_logo {
+    height: 50px;
+  }
+  .header_menu {
+    column-gap: 25px;
+  }
+  .header_menu a {
+    font-size: 12px;
+  }
+  .contact_list {
+    column-gap: 25px;
+  }
+  .contact_link {
+    font-size: 12px;
+    text-align: right;
+  }
+  .cases {
+    width: 163px;
+  }
+  .cases iframe {
+    width: 133px !important;
+  }
+  .comands {
+    top: 45%;
+    right: 15%;
+  }
+  .price {
+    left: 15%;
+  }
+  .vision {
+    right: 20%;
+  }
+  .contacts_form_popup {
+    width: 90%;
+  }
+  .popup_title {
+    font-size: 20px;
+  }
+  .popup_desc p {
+    font-size: 14px;
+  }
+  .header .wrapper{
+    margin: 15px auto;
+  }
+  .cards {
+    top: 75px;
+    bottom: 90px;
+    width: 90%;
+    left: 5%;
+    flex-direction: column;
+    overflow-y: auto;
+    row-gap: 15px;
+  }
+  .cards .card{
+    max-width: 100%;
+  }
 }
