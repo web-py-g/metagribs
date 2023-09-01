@@ -152,7 +152,7 @@ body {
   justify-content: space-between;
 }
 .header_logo {
-  height: 75px;
+  height: 50px;
 }
 .header_menu {
   position: relative;
@@ -247,6 +247,7 @@ body {
 .footer .wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .contact_list {
@@ -299,8 +300,15 @@ body {
 .heart:hover {
   filter: drop-shadow(0 0 10px #fff);
 }
-.heart img {
+.heart {
   animation: puls 0.75s linear infinite alternate;
+}
+.heart::before{
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: url(./assets/img/heart.png);
 }
 @keyframes puls {
   0% {
@@ -404,11 +412,17 @@ body {
   align-items: center;
   flex-direction: column;
 }
+.page_loader img{
+  width: 100px;
+  margin-bottom: 20px;
+}
 .page_loader h2 {
   font-size: 38px;
+  font-family: 'NeueBit';
 }
 .page_loader h3 {
   font-size: 20px;
+  font-family: 'NeueBit';
 }
 .page_loader_body {
   display: flex;
