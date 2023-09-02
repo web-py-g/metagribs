@@ -1,7 +1,9 @@
 let services_link = document.getElementById("services");
 let services_submenu = document.querySelector(".services");
 
-services_link.onclick = () => {
+  console.log(services_link);
+  services_link.onclick = () => {
+  console.log(123);
   services_submenu.classList.toggle("open");
 
   if (cases_submenu.classList.contains("open"))

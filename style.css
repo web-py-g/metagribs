@@ -148,7 +148,7 @@ body {
   max-width: 90%;
   margin: 25px auto;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
 }
 .header_logo {
@@ -166,12 +166,12 @@ body {
 .header_submenu {
   position: absolute;
   left: 0;
-  top: 100%;
+  top: 110%;
   display: none;
   flex-direction: column;
   row-gap: 15px;
   width: 70px;
-  padding-top: 20px;
+  margin-top: 20px;
 }
 .header_submenu.open {
   display: flex;
@@ -185,25 +185,25 @@ body {
 .header_menu a:hover {
   text-shadow: 0px 0px 10px #fff;
 }
-.header_menu_link:hover .services:not(.open) {
+/* .header_menu_link:hover .services:not(.open) {
   display: flex;
   animation-name: dropdown;
   animation-duration: 1s;
   animation-iteration-count: 1;
   animation-delay: 3s;
   animation-fill-mode: both;
-}
+} */
 .services {
   z-index: 9;
 }
 @keyframes dropdown {
   0% {
     opacity: 0;
-    left: -100%;
+    top: -100%;
   }
   100% {
     opacity: 1;
-    left: 0;
+    top: 110%;
   }
 }
 *::-webkit-scrollbar {
@@ -247,7 +247,7 @@ body {
 .footer .wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
 }
 
 .contact_list {
@@ -309,6 +309,9 @@ body {
   width: 50px;
   height: 50px;
   background: url(./assets/img/heart.png);
+}
+.heart:hover::before{
+  background: url(./assets/img/heart_red.png);
 }
 @keyframes puls {
   0% {
@@ -585,7 +588,7 @@ body {
 
 @media screen and (max-width: 767px) {
   .header_logo {
-    height: 50px;
+    height: 25px;
   }
   .header_menu {
     column-gap: 25px;
